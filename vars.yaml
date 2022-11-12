@@ -5,4 +5,9 @@
   tasks:
     - name: printing the URL
       ansible.builtin.debug:
-        msg: value of url is {{URL}}
+            msg: value of url is {{URL}}
+    - name: printing the URL
+      ansible.builtin.debug:
+            msg: value of url is {{URL}}
+      vars:
+        URL:  task.google.com
