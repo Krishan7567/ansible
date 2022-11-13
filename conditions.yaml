@@ -1,0 +1,12 @@
+- name: Demo on conditions
+  hosts:  all
+  tasks:
+    - name: print centos Distro
+      ansible.builtin.debug:
+        msg: Hello to centos
+      when: ansible_distribution == "CentOS"
+
+    - name: print Ubunto Distro
+      ansible.builtin.debug:
+        msg: Hello to Ubuntu
+      when: ansible_distribution == "Ubuntu"
