@@ -1,0 +1,21 @@
+- name: Demo on privilages
+  hosts:  all
+  become: yes
+  tasks:
+    - name: Running a shell commands
+      ansible.builtin.shell: i.d
+      register: OUT
+    
+    - name: printing the OUT variable
+      ansible.builtin.debug:  
+      msg: "{{OUT.stdout}}"
+
+    - name: Running a shell commands as centos user
+      ansible.builtin.shell: i.d
+      register: OUT
+      become_user:  centos
+
+    - name: printing the OUT variable as centos user
+      ansible.builtin.debug:  
+      msg: "{{OUT.stdout}}"
+      become_user:  centos
