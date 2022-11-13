@@ -8,7 +8,7 @@
     
     - name: printing the OUT variable
       ansible.builtin.debug:  
-      msg: "{{OUT.stdout}}"
+        msg: "{{OUT.stdout}}"
 
     - name: Running a shell commands as centos user
       ansible.builtin.shell: i.d
@@ -17,5 +17,5 @@
 
     - name: printing the OUT variable as centos user
       ansible.builtin.debug:  
-      msg: "{{OUT.stdout}}"
+        msg: "{{OUT.stdout}}"
       become_user:  centos
